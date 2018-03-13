@@ -72,6 +72,13 @@ h2 {
 /* iPads  ----------- */
 @media only screen and (min-width : 500px) {
 /* Styles */
+
+
+} /* end query */
+
+/* Laptops  ----------- */
+@media only screen and (min-width : 600px) {
+/* Styles */
 .date {	
 	align-self: flex-end;
 	padding-right: 20px;
@@ -85,12 +92,6 @@ span {
 	display: inline-block;
 }
 
-
-} /* end query */
-
-/* Laptops  ----------- */
-@media only screen and (min-width : 600px) {
-/* Styles */
 
 h1 {
 	font-size: 7em;
