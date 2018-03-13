@@ -70,7 +70,7 @@ h2 {
 
 
 /* iPads  ----------- */
-@media only screen and (min-width : 321px) {
+@media only screen and (min-width : 500px) {
 /* Styles */
 .date {	
 	align-self: flex-end;
