@@ -1,0 +1,92 @@
+html {
+	overflow: hidden;
+}
+
+@font-face {
+    font-family: abel;
+    src: url(../fonts/abel-regular.ttf);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+body {
+	background-color: black;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
+}
+
+.logo {
+	align-self: flex-start;
+}
+
+.date {	
+	margin-top: 50px;	
+
+}
+
+.clock {
+
+}
+
+.message {
+	
+}
+
+.mars {
+	background-color: blue;
+	width: 500px;
+	height: 500px;
+	margin-top: 150px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+span {
+	display: block;
+	line-height: 0.2;
+}
+
+/* Text */
+h1 {
+	color: white;
+	font-family: abel, sans-serif;
+	font-size: 6em;
+}
+
+h2 {
+	color: #A9A9A9;
+	font-family: poppins, sans-serif;
+	font-size: 1em;
+}
+
+/* Text end */
+
+
+/* iPads  ----------- */
+@media only screen and (min-width : 321px) {
+/* Styles */
+
+}
+
+/* Laptops  ----------- */
+@media only screen and (min-width : 600px) {
+/* Styles */
+
+}
+
+/* Bigger screens  ----------- */
+@media only screen and (min-width : 900px) {
+/* Styles */
+	
+	
+	
+}
+
