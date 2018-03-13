@@ -40,13 +40,12 @@ body {
 }
 
 .mars {
-	background-color: blue;
-	width: 500px;
-	height: 500px;
-	margin-top: 150px;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
+	background: url(../images/marsSmall_2.png) no-repeat;
+	background-size: 100%;
+    width: 500px;
+    height: 100%;
+    bottom: -450px;
+    position: absolute;	
 }
 
 span {
@@ -73,14 +72,53 @@ h2 {
 /* iPads  ----------- */
 @media only screen and (min-width : 321px) {
 /* Styles */
-
+.date {	
+	align-self: flex-end;
+	padding-right: 20px;
 }
+
+.clock {
+	order: 1;
+}
+
+span {
+	display: inline-block;
+}
+
+
+} /* end query */
 
 /* Laptops  ----------- */
 @media only screen and (min-width : 600px) {
 /* Styles */
 
+h1 {
+	font-size: 7em;
+	margin: 15px;
 }
+
+h2 {	
+	font-size: 1.5em;
+	
+}
+
+.message {
+	margin-top: 150px;	
+}
+
+.clock {
+	
+}
+
+.mars {
+	background: url(../images/marsBig.png) no-repeat 100%;	
+	background-position: center;
+	width: 100%;
+	bottom: -300px;	
+}
+
+
+} /* end query */
 
 /* Bigger screens  ----------- */
 @media only screen and (min-width : 900px) {
@@ -88,5 +126,5 @@ h2 {
 	
 	
 	
-}
+} /* end query */
 
