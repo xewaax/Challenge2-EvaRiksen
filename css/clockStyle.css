@@ -1,5 +1,4 @@
 
-
 @font-face {
     font-family: abel;
     src: url(../fonts/abel-regular.ttf);
@@ -148,16 +147,22 @@ h2 {
 /* Bigger screens  ----------- */
 @media only screen and (min-width : 900px) {
 /* Styles */
+
 h1.earth {
 	text-align: right !important;
 }
 
 	.date {	
 	align-self: flex-end;
-	padding-right: 20px;
+	padding-right: 20px;	
+	margin-top: 20px;	
+}
+
+.message {
+	margin-top: 150px;	
 }
 	
-	.sun {
+.sun {
 	display:block;
 	position:absolute;
 	top:150px;

@@ -1,7 +1,7 @@
 var sun = document.getElementsByClassName('sun')[0];
 var path = new TimelineMax({repeat: 1000});
   
-path.to(sun, 34.8, 
+path.to(sun, 35.4, 
 {bezier:{type:'quadratic', 
 values:[
 {x:0, y:0},{x:650, y:0},{x:650, y:650},  

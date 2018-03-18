@@ -56,6 +56,8 @@
 	<script src="js/TweenMax.min.js"></script>
 	<script src="js/sun.js"></script>
 	<script>
+	
+	var amountOfDays = 1;
 	//Datum
 	function formatDate(date) {
 	  var monthNames = [
@@ -71,30 +73,30 @@
 
 	  return day + ' ' + monthNames[monthIndex] + ' ' + year;
 	}
-
+	//Set current day on load
 	var dateToday = formatDate(new Date());
 	document.getElementById('todaysDate').innerHTML = dateToday;
 	
+	//Function to update date when its night
 	function updateDate() {
-		console.log(parseInt((totalSeconds / 3600) % 24));
 			// Create new Date instance
-			var date = new Date()
-
+			var date = new Date();
 			// Add a day
-			date.setDate(date.getDate() + 1);
+			date.setDate(date.getDate() + amountOfDays);
 			var dateToday = formatDate(date);
 			document.getElementById('todaysDate').innerHTML = dateToday;
+			amountOfDays++;
 	}
 	
 
 	//Eind datum
-	
-	
+	var night = false;
 	function update() {
 	var hours = document.getElementById('hours').innerHTML;
 	var message = document.getElementById('messageText');
 	var stars = document.getElementsByClassName('allStars')[0];
 	var tl = new TimelineMax();
+	
 	
 		if (hours >= 12 && hours < 18) {
 		//Message update
@@ -104,11 +106,19 @@
 		}else if (hours >= 18 && hours < 24) {
 			message.innerHTML = 'Good evening!';
 			document.body.style.backgroundImage = "url('images/evening.jpg')";
+			
 		}else if (hours >= 0 && hours < 6) {
+		
+			if (night == false) {
+				updateDate();
+				night = true;
+			}
 			message.innerHTML = 'Good night!';
 			document.body.style.backgroundImage = "url('images/night.jpg')";
 			tl.to(stars, 2, {opacity:1}, Power0.easeIn);
+			
 		}else if (hours >= 6 && hours < 12) {
+			night = false;
 			tl.to(stars, 2, {opacity:0}, Power0.easeIn);
 			message.innerHTML = 'Good morning!';
 			document.body.style.backgroundImage = "url('images/morning.jpg')";
