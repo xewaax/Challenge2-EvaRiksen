@@ -1,6 +1,4 @@
-html {
-	overflow: hidden;
-}
+
 
 @font-face {
     font-family: abel;
@@ -13,7 +11,8 @@ html {
 }
 
 body {
-	background-color: black;
+	background-color: #4180C5;
+	transition: background-color 3s ease;
 }
 
 .container {
@@ -39,7 +38,12 @@ body {
 	
 }
 
+.sun {
+	display:none;
+	z-index:1;
+}
 .mars {
+	z-index:1;
 	background: url(../images/marsSmall_2.png) no-repeat;
 	background-size: 100%;
     width: 500px;
@@ -51,8 +55,18 @@ body {
 span {
 	display: block;
 	line-height: 0.2;
+	
 }
 
+.clockSpan {
+	display:block;
+	line-height:0.2;
+	height:80px;
+}
+
+.hiddenMobile {
+	display:none;
+}
 /* Text */
 h1 {
 	color: white;
@@ -79,11 +93,15 @@ h2 {
 /* Laptops  ----------- */
 @media only screen and (min-width : 600px) {
 /* Styles */
+
+
 .date {	
 	align-self: flex-end;
 	padding-right: 20px;
 }
-
+.hiddenMobile {
+	display:inline-block;
+}
 .clock {
 	order: 1;
 }
@@ -91,7 +109,9 @@ h2 {
 span {
 	display: inline-block;
 }
-
+.clockSpan {
+	display:inline-block;
+}
 
 h1 {
 	font-size: 7em;
@@ -104,11 +124,11 @@ h2 {
 }
 
 .message {
-	margin-top: 150px;	
+	margin-top: 200px;	
 }
 
 .clock {
-	
+	line-height:0.4;
 }
 
 .mars {
@@ -125,7 +145,12 @@ h2 {
 @media only screen and (min-width : 900px) {
 /* Styles */
 	
-	
+	.sun {
+	display:block;
+	position:absolute;
+	top:150px;
+	margin:0 auto;
+}
 	
 } /* end query */
 
