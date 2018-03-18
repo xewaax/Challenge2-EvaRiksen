@@ -98,7 +98,7 @@
 
 		}else if (hours >= 18 && hours < 24) {
 			message.innerHTML = 'Good evening!';
-			document.body.style.backgroundColor = 'purple';
+			document.body.style.backgroundColor = '#483d8b';
 		}else if (hours >= 0 && hours < 6) {
 			message.innerHTML = 'Good night!';
 			document.body.style.backgroundColor = '#141D39';
@@ -106,7 +106,7 @@
 		}else if (hours >= 6 && hours < 12) {
 		stars.style.display = 'none';
 			message.innerHTML = 'Good morning!';
-			document.body.style.backgroundColor = 'orange';
+			document.body.style.backgroundColor = '#87cefa';
 		}
 		//End message update
 		setTimeout(function() {update(); }, 100);
