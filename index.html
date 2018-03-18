@@ -17,7 +17,9 @@
 		
 		<img class="logo" src="images/logo.png" alt="SpaceX" />
 		
-		<div class="date">
+		<div class="date">		
+		
+		
 			<span><h2>Today's date</h2></span>
 			<span><h2 id="todaysDate">13 March 2018</h2></span>
 		</div>
@@ -41,7 +43,7 @@
 		
 	</div> <!--container-->
 	<!-- Stars for midnight -->
-		<div class="allStars" style="display:none;">
+		<div class="allStars" style="opacity:0;">
 			<div id="stars"></div>
 			<div id="stars2"></div>
 			<div id="stars3"></div>
@@ -90,23 +92,24 @@
 	var hours = document.getElementById('hours').innerHTML;
 	var message = document.getElementById('messageText');
 	var stars = document.getElementsByClassName('allStars')[0];
-		
+	var tl = new TimelineMax();
+	
 		if (hours >= 12 && hours < 18) {
 		//Message update
 			message.innerHTML = 'Good afternoon!';
-			document.body.style.backgroundColor = '#4180C5';
+			document.body.style.backgroundImage = "url('images/afternoon.jpg')";
 
 		}else if (hours >= 18 && hours < 24) {
 			message.innerHTML = 'Good evening!';
-			document.body.style.backgroundColor = '#483d8b';
+			document.body.style.backgroundImage = "url('images/evening.jpg')";
 		}else if (hours >= 0 && hours < 6) {
 			message.innerHTML = 'Good night!';
-			document.body.style.backgroundColor = '#141D39';
-			stars.style.display = 'block';
+			document.body.style.backgroundImage = "url('images/night.jpg')";
+			tl.to(stars, 2, {opacity:1}, Power0.easeIn);
 		}else if (hours >= 6 && hours < 12) {
-		stars.style.display = 'none';
+			tl.to(stars, 2, {opacity:0}, Power0.easeIn);
 			message.innerHTML = 'Good morning!';
-			document.body.style.backgroundColor = '#87cefa';
+			document.body.style.backgroundImage = "url('images/morning.jpg')";
 		}
 		//End message update
 		setTimeout(function() {update(); }, 100);

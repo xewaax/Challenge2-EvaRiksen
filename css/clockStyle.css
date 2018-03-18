@@ -12,7 +12,10 @@
 
 body {
 	background-color: #4180C5;
-	transition: background-color 3s ease;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: background-image 3s ease;
 }
 
 .container {
@@ -23,6 +26,8 @@ body {
 
 .logo {
 	align-self: flex-start;
+	padding-top: 20px;
+	padding-left: 20px;
 }
 
 .date {	
@@ -84,7 +89,7 @@ h2 {
 
 
 /* iPads  ----------- */
-@media only screen and (min-width : 500px) {
+@media only screen and (min-width : 360px) {
 /* Styles */
 
 
@@ -95,10 +100,7 @@ h2 {
 /* Styles */
 
 
-.date {	
-	align-self: flex-end;
-	padding-right: 20px;
-}
+
 .hiddenMobile {
 	display:inline-block;
 }
@@ -144,6 +146,11 @@ h2 {
 /* Bigger screens  ----------- */
 @media only screen and (min-width : 900px) {
 /* Styles */
+	
+	.date {	
+	align-self: flex-end;
+	padding-right: 20px;
+}
 	
 	.sun {
 	display:block;
