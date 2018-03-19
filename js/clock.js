@@ -14,7 +14,7 @@ function setTime() {
    hoursLabel.innerHTML = h;
    minutesLabel.innerHTML = m;
    secondsLabel.innerHTML = s;
-    update(); //check if background needs to change
+    
 }
 
 function pad(val) {
