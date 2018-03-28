@@ -32,7 +32,7 @@
 		</div>
 		
 		<div class="message">
-			<h2 id="messageText">Good evening!</h2>
+			<h2 id="messageText"></h2>
 		</div>
 	
 
@@ -41,6 +41,15 @@
 	
 		
 	</div> <!--container-->
+	
+	
+	<!-- Preload backgroundImage in css -->
+		<div class="background afternoon"></div>
+		<div class="background evening"></div>
+		<div class="background night"></div>
+		<div class="background morning"></div>
+	<!-- End Preload backgroundImage in css -->
+		
 	
 	<!-- Stars for midnight -->
 		<div class="allStars" style="opacity:0;">
@@ -96,17 +105,25 @@
 	var hours = document.getElementById('hours').innerHTML;
 	var message = document.getElementById('messageText');
 	var stars = document.getElementsByClassName('allStars')[0];
+	var afternoon = document.getElementsByClassName('afternoon')[0];
+	var evening = document.getElementsByClassName('evening')[0];
+	var nightbg = document.getElementsByClassName('night')[0];
+	var morning = document.getElementsByClassName('morning')[0];
 	var tl = new TimelineMax();
 	
 	
 		if (hours >= 12 && hours < 18) {
 		//Message update
 			message.innerHTML = 'Good afternoon!';
-			document.body.style.backgroundImage = "url('images/afternoon.jpg')";
-
+			//document.body.style.backgroundImage = "url('images/afternoon.jpg')";
+			tl.to(morning, 2, {opacity:0}, Power0.easeIn)
+			  .to(afternoon, 2, {opacity:1}, Power0.easeIn);
+			
 		}else if (hours >= 18 && hours < 24) {
 			message.innerHTML = 'Good evening!';
-			document.body.style.backgroundImage = "url('images/evening.jpg')";
+			//document.body.style.backgroundImage = "url('images/evening.jpg')";
+			tl.to(evening, 1, {opacity:1}, Power0.easeIn)
+			.to(afternoon, 2, {opacity:0}, Power0.easeIn);
 			
 		}else if (hours >= 0 && hours < 6) {
 		
@@ -115,14 +132,20 @@
 				night = true;
 			}
 			message.innerHTML = 'Good night!';
-			document.body.style.backgroundImage = "url('images/night.jpg')";
+			//document.body.style.backgroundImage = "url('images/night.jpg')";
 			tl.to(stars, 2, {opacity:1}, Power0.easeIn);
 			
+			tl.to(evening, 2, {opacity:0}, Power0.easeIn)
+			  .to(nightbg, 1, {opacity:1}, Power0.easeIn);
+			  
 		}else if (hours >= 6 && hours < 12) {
 			night = false;
 			tl.to(stars, 2, {opacity:0}, Power0.easeIn);
 			message.innerHTML = 'Good morning!';
-			document.body.style.backgroundImage = "url('images/morning.jpg')";
+			//document.body.style.backgroundImage = "url('images/morning.jpg')";
+			
+			tl.to(nightbg, 2, {opacity:0}, Power0.easeIn)
+			  .to(morning, 2, {opacity:1}, Power0.easeIn);
 		}
 		//End message update
 		setTimeout(function() {update(); }, 100);

@@ -10,12 +10,41 @@
 }
 
 body {
-	
+	margin: 0;	
+}
+
+/* Changing backgrounds preloaded */
+
+.background {
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
-	transition: background-image 3s ease;
-	
+	background-position: top;
+    width: 1650px;
+    z-index: -1;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.afternoon {
+	background-image: url('../images/afternoon.jpg');
+    
+}
+
+.evening {
+	background-image: url('../images/evening.jpg');
+	opacity: 0;
+
+}
+
+.night {
+	background-image: url('../images/night.jpg');
+	opacity: 0;
+}
+
+.morning {
+	background-image: url('../images/morning.jpg');
+	opacity: 0;
 }
 
 .container {
